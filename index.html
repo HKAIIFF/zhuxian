@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朱仙镇AI木版年画影视节 | 千年文化·数字新生·全球共创</title>
+    <meta name="description" content="全球首个以千年非遗为核心的AI影视节，重新定义传统文化的数字生命力，构建文化保护与商业开发协调发展的创新模式">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --secondary: #ffd700;
+            --accent: #ff6b35;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 20%);
+        }
+        
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+            100% { text-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 35px rgba(211, 47, 47, 0.4); }
+        }
+        
+        .logo-sub {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            opacity: 0.8;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card {
+            background-color: rgba(26, 32, 44, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #b71c1c);
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(211, 47, 47, 0.4);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #ffb300);
+            color: #000;
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+            color: #000;
+        }
+        
+        .hero {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.8;
+            animation: bgPan 30s infinite linear;
+        }
+        
+        @keyframes bgPan {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: sparkle 2s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+            100% { opacity: 0; transform: scale(0) rotate(360deg); }
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .stats-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(26, 32, 44, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            background: rgba(26, 32, 44, 0.7);
+        }
+        
+        .stats-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .award-card {
+            position: relative;
+            background: rgba(26, 32, 44, 0.9);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .award-card:hover::before {
+            left: 100%;
+        }
+        
+        .award-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .trophy-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .trophy-gold {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .trophy-silver {
+            color: var(--silver);
+            text-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+        }
+        
+        .trophy-bronze {
+            color: var(--bronze);
+            text-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--accent));
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            border: 4px solid #0a0a0a;
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding: 2rem;
+            background: rgba(26, 32, 44, 0.7);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            margin: 0 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 80vh;
+                padding-top: 70px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem !important;
+                margin-top: 20px;
+            }
+            
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+            
+            .logo-font {
+                font-size: 1.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 px-4 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex flex-col">
+                <div class="logo-font text-2xl md:text-3xl">ZHUXIAN AI FESTIVAL</div>
+                <div class="logo-sub text-xs">2026</div>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#heritage" class="hover:text-yellow-400 transition">文化传承</a>
+                <a href="#festival" class="hover:text-yellow-400 transition">影视节</a>
+                <a href="#awards" class="hover:text-yellow-400 transition">奖项设置</a>
+                <a href="#park" class="hover:text-yellow-400 transition">主题乐园</a>
+                <a href="#training" class="hover:text-yellow-400 transition">培训体系</a>
+                <a href="#innovation" class="hover:text-yellow-400 transition">技术创新</a>
+                <a href="#tickets" class="hover:text-yellow-400 transition">购票入园</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#tickets" class="btn-gold px-6 py-2 rounded-full text-sm font-bold">立即购票</a>
+                <a href="#park" class="btn-primary px-6 py-2 rounded-full text-sm">体验乐园</a>
+                
+                <!-- 移动设备菜单按钮 -->
+                <button class="mobile-menu-button md:hidden" id="menuToggle">
+                    <i class="fas fa-bars text-white text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动设备菜单 -->
+        <div class="mobile-menu md:hidden" id="mobileMenu">
+            <div class="mobile-menu-close absolute top-4 right-4 cursor-pointer" id="menuClose">
+                <i class="fas fa-times text-xl"></i>
+            </div>
+            <div class="mt-12 flex flex-col space-y-6">
+                <a href="#heritage" class="text-xl hover:text-yellow-400 transition">文化传承</a>
+                <a href="#festival" class="text-xl hover:text-yellow-400 transition">影视节</a>
+                <a href="#awards" class="text-xl hover:text-yellow-400 transition">奖项设置</a>
+                <a href="#park" class="text-xl hover:text-yellow-400 transition">主题乐园</a>
+                <a href="#training" class="text-xl hover:text-yellow-400 transition">培训体系</a>
+                <a href="#innovation" class="text-xl hover:text-yellow-400 transition">技术创新</a>
+                <a href="#tickets" class="text-xl hover:text-yellow-400 transition">购票入园</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        
+        <!-- Floating sparkles -->
+        <div class="sparkle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 30%; right: 15%; animation-delay: 0.5s;"></div>
+        <div class="sparkle" style="bottom: 40%; left: 20%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="top: 60%; right: 25%; animation-delay: 1.5s;"></div>
+        
+        <div class="container mx-auto px-4 hero-content">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="mb-8">
+                    <div class="logo-font text-6xl md:text-8xl mb-4">ZHUXIAN AI FESTIVAL</div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text">
+                        朱仙镇AI木版年画影视节
+                    </h1>
+                    <p class="text-xl md:text-3xl text-gray-300 mb-2">
+                        千年文化 · 数字新生 · 全球共创
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-400">
+                        全球首个以千年非遗为核心的AI影视节 • 让传统文化拥抱未来
+                    </p>
+                </div>
+                
+                <!-- Key Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                    <div class="stats-card">
+                        <div class="number">300万</div>
+                        <div class="text-sm">总奖金池（元）</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="number">1000+</div>
+                        <div class="text-sm">年画样式数字化</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="number">500+</div>
+                        <div class="text-sm">AI影视作品目标</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="number">5000万</div>
+                        <div class="text-sm">全球观众覆盖</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
+                    <a href="#festival" class="btn-gold px-8 py-4 rounded-full text-lg font-bold">
+                        <i class="fas fa-film mr-2"></i>了解影视节
+                    </a>
+                    <a href="#park" class="btn-primary px-8 py-4 rounded-full text-lg font-bold">
+                        <i class="fas fa-magic mr-2"></i>体验主题乐园
+                    </a>
+                    <a href="#heritage" class="bg-transparent border-2 border-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-black transition">
+                        <i class="fas fa-heart mr-2"></i>探索文化价值
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化传承价值 Section -->
+    <section id="heritage" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8 gradient-text">千年文化的数字重生</h2>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                        朱仙镇木版年画，中国四大年画之首，承载着千年文化记忆。通过AI技术，我们让静态的传统年画获得动态生命力，
+                        实现文化保护与创新发展的完美融合，让千年年画活在当下，让传统文化拥抱未来。
+                    </p>
+                </div>
+                
+                <!-- 核心价值展示 -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">📜</span>
+                        <h3 class="feature-title">非遗数字化保护</h3>
+                        <p class="text-gray-300">
+                            完整记录和保存朱仙镇木版年画的传统制作技艺，通过数字化手段建立永久性的文化遗产档案。
+                            预计完整数字化保护300+种传统年画样式，为全球研究者和爱好者提供权威的学习资源。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎭</span>
+                        <h3 class="feature-title">文化IP活化</h3>
+                        <p class="text-gray-300">
+                            通过AI技术让门神、财神、戏曲人物等传统角色获得现代表达能力，从静态装饰符号转化为动态文化IP。
+                            门神秦琼、尉迟敬德不再是平面的守护神，而是有血有肉、能与观众互动的数字英雄。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3 class="feature-title">全球文化传播</h3>
+                        <p class="text-gray-300">
+                            目标影响全球观众5000万人次，其中海外观众1000万人次，成为中华文化国际传播的重要载体。
+                            与联合国教科文组织合作，将朱仙镇年画申报世界非物质文化遗产，提升中华文化的国际地位。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎓</span>
+                        <h3 class="feature-title">传承人才培养</h3>
+                        <p class="text-gray-300">
+                            建立年画文化数字博物馆，收录历史年画样式300种，传统制作工艺流程20套，传承人技艺视频200小时。
+                            培养新一代年画传承人1000名以上，让年画文化在新一代中得到传承和发展。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎨</span>
+                        <h3 class="feature-title">现代艺术表达</h3>
+                        <p class="text-gray-300">
+                            开发专门针对年画艺术的AI动画生成算法，在保持传统艺术风格的前提下，创造符合现代观众审美的新内容。
+                            实现文化传承与科技创新的深度融合，创作AI年画影视作品500部以上。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🏛️</span>
+                        <h3 class="feature-title">文化认同构建</h3>
+                        <p class="text-gray-300">
+                            通过现代科技手段让年画文化重新焕发生机，增强青少年的文化自信和民族认同。
+                            当游客看到千年文化在现代科技中重新绽放时，产生的不仅是新奇感，更是作为中华文化传承者的自豪感。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 传统与现代对比 -->
+                <div class="card p-8 mt-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 gradient-text">传统年画的数字化重生</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-2xl font-bold mb-6" style="color: var(--primary);">传统年画</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li>• 静态平面艺术形式，主要用于节庆装饰</li>
+                                <li>• 手工雕版印刷，工艺复杂传承困难</li>
+                                <li>• 文化符号功能为主，缺乏互动体验</li>
+                                <li>• 受众范围有限，主要在传统文化圈传播</li>
+                                <li>• 面临失传风险，年轻一代关注度低</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-6" style="color: var(--secondary);">AI年画影视</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li>• 动态影视表达，角色具备生动的故事性</li>
+                                <li>• 数字化制作，可无限复制和创新发展</li>
+                                <li>• 沉浸式互动体验，观众参与文化创作</li>
+                                <li>• 全球传播平台，跨越文化和年龄边界</li>
+                                <li>• 激发年轻人兴趣，确保文化传承延续</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI影视节竞赛 Section -->
+    <section id="festival" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">AI影视节竞赛体系</h2>
+                    <p class="text-xl text-gray-300">
+                        构建专业权威的竞赛评选机制，发掘和培育优秀的AI年画影视作品，
+                        推动传统文化与现代科技的深度融合创新
+                    </p>
+                </div>
+
+                <!-- 征片类别 -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 text-gold">
+                        <i class="fas fa-video mr-3"></i>作品征集类别
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="feature-card">
+                            <span class="feature-icon">🎬</span>
+                            <h3 class="feature-title">AI年画短片类</h3>
+                            <p class="text-gray-300 mb-4">
+                                时长5-30分钟，以朱仙镇木版年画为核心创作元素，
+                                AI技术参与度不低于50%，展现传统年画文化的现代表达。
+                            </p>
+                            <div class="space-y-2 text-sm">
+                                <div class="text-yellow-400">• 传统故事现代演绎</div>
+                                <div class="text-yellow-400">• 年画角色动态化表现</div>
+                                <div class="text-yellow-400">• 文化内涵深度挖掘</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">🎪</span>
+                            <h3 class="feature-title">互动体验类</h3>
+                            <p class="text-gray-300 mb-4">
+                                观众可参与影响故事走向或自由探索AI辅助构建的虚拟世界，
+                                强调用户代理感和探索体验。
+                            </p>
+                            <div class="space-y-2 text-sm">
+                                <div class="text-yellow-400">• 多分支故事结构</div>
+                                <div class="text-yellow-400">• 开放世界设计</div>
+                                <div class="text-yellow-400">• 实时响应用户输入</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">⚙️</span>
+                            <h3 class="feature-title">AI系统创作类</h3>
+                            <p class="text-gray-300 mb-4">
+                                参赛作品本身是一个"系统"，能够在每次运行时生成独一无二、
+                                不可预见的故事或视觉体验。
+                            </p>
+                            <div class="space-y-2 text-sm">
+                                <div class="text-yellow-400">• 高度程序化生成逻辑</div>
+                                <div class="text-yellow-400">• 涌现特性的复杂系统</div>
+                                <div class="text-yellow-400">• 每次运行产生不同结果</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评审标准 -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 text-gold">四重评审机制</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-red-500">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">文化专家团</h4>
+                            <p class="text-sm text-gray-300 mb-4">国家级年画传承人、民俗文化研究专家、故宫博物院专家</p>
+                            <div class="text-lg font-bold text-gold">25%权重</div>
+                        </div>
+                        
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-blue-500">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">技术专家团</h4>
+                            <p class="text-sm text-gray-300 mb-4">AI算法专家、计算机图形学专家、交互技术专家</p>
+                            <div class="text-lg font-bold text-gold">30%权重</div>
+                        </div>
+                        
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-purple-500">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">艺术专家团</h4>
+                            <p class="text-sm text-gray-300 mb-4">国际动画导演、视觉艺术家、影视制作专家</p>
+                            <div class="text-lg font-bold text-gold">25%权重</div>
+                        </div>
+                        
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-green-500">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">产业专家团</h4>
+                            <p class="text-sm text-gray-300 mb-4">文化产业投资人、IP运营专家、市场营销专家</p>
+                            <div class="text-lg font-bold text-gold">20%权重</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 征片时间表 -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content" style="max-width: 45%;">
+                            <h4 class="text-xl font-bold mb-3 text-gold">作品征集期</h4>
+                            <p class="text-lg mb-4 font-semibold">2026年1月1日 - 2026年6月30日</p>
+                            <p class="text-gray-300 mb-4">
+                                面向全球征集优秀AI年画影视作品，提供技术支持和创作指导。
+                                早期提交作品可获得专业导师一对一指导机会。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content" style="max-width: 45%;">
+                            <h4 class="text-xl font-bold mb-3 text-primary">初审筛选期</h4>
+                            <p class="text-lg mb-4 font-semibold">2026年7月1日 - 2026年8月15日</p>
+                            <p class="text-gray-300 mb-4">
+                                技术专家团进行AI原生度验证、技术可行性评估和伦理合规性检查。
+                                通过率约60%，确保作品符合基本标准。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content" style="max-width: 45%;">
+                            <h4 class="text-xl font-bold mb-3 text-secondary">专业评审期</h4>
+                            <p class="text-lg mb-4 font-semibold">2026年8月16日 - 2026年9月30日</p>
+                            <p class="text-gray-300 mb-4">
+                                四个专家团全员参与，按照四维评价矩阵进行详细评估。
+                                每件作品至少3名评委评审，通过率约40%。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content" style="max-width: 45%;">
+                            <h4 class="text-xl font-bold mb-3 text-accent">终极评审</h4>
+                            <p class="text-lg mb-4 font-semibold">2026年10月1日 - 2026年10月15日</p>
+                            <p class="text-gray-300 mb-4">
+                                核心评审委员会集中评审，现场观看/体验重点作品，
+                                创作者答辩，最终投票决定所有奖项获得者。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 奖项设置 Section -->
+    <section id="awards" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">奖项设置</h2>
+                    <p class="text-xl text-gray-300">
+                        总奖金池300万元人民币，涵盖技术创新、艺术成就、文化传承三个层次
+                    </p>
+                </div>
+
+                <!-- 主要奖项 -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 text-gold">
+                        <i class="fas fa-crown mr-3"></i>顶级大奖
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="award-card p-8 text-center border-2" style="border-color: var(--gold);">
+                            <div class="trophy-icon trophy-gold">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gold">朱仙镇年画数字复活大奖</h3>
+                            <p class="text-lg mb-4 text-gray-300">最佳AI原生影视作品</p>
+                            <div class="text-4xl font-bold text-gold mb-4">100万元</div>
+                            <p class="text-sm text-gray-400 mb-4">
+                                授予在所有参赛作品中综合表现最优秀、最具时代开创性的AI原生作品。
+                                获奖作品将获得启封故园IP开发授权和全国巡展支持。
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>开放给所有类别</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>由混合智能集体评审</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>区块链NFT奖杯</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="award-card p-8 text-center">
+                            <div class="trophy-icon trophy-silver">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-silver">最佳AI视觉生成奖</h3>
+                            <p class="text-lg mb-4 text-gray-300">技术创新突破</p>
+                            <div class="text-4xl font-bold text-silver mb-4">50万元</div>
+                            <p class="text-sm text-gray-400 mb-4">
+                                专门表彰在AI图像生成、风格迁移、动态表现等技术方面的突破性应用。
+                                评审重点关注算法原创性、视觉效果真实性、文化元素保持度。
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>技术专家团重点评审</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>专利申请支持</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="award-card p-8 text-center">
+                            <div class="trophy-icon trophy-bronze">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-bronze">最佳传统工艺数字化奖</h3>
+                            <p class="text-lg mb-4 text-gray-300">非遗传承贡献</p>
+                            <div class="text-4xl font-bold text-bronze mb-4">40万元</div>
+                            <p class="text-sm text-gray-400 mb-4">
+                                由国家级非遗传承人组成的专业评审团评选，专门奖励在传统雕版、
+                                印制、着色等工艺数字化表达方面的优秀作品。
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>传承人专业评审</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                                    <span>文化保护贡献认证</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 专项奖项 -->
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 text-secondary">
+                            <i class="fas fa-star mr-2"></i>技术创新奖项
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="award-card p-4 flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">最佳AI交互体验奖</h4>
+                                    <p class="text-sm text-gray-400">评选观众参与度和互动体验最佳的作品</p>
+                                </div>
+                                <div class="text-lg font-bold text-secondary">25万元</div>
+                            </div>
+                            <div class="award-card p-4 flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">最佳跨文化融合奖</h4>
+                                    <p class="text-sm text-gray-400">鼓励年画文化与国际文化的创新融合</p>
+                                </div>
+                                <div class="text-lg font-bold text-secondary">30万元</div>
+                            </div>
+                            <div class="award-card p-4 flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">最佳技术突破奖</h4>
+                                    <p class="text-sm text-gray-400">表彰在AI技术应用方面的原创性贡献</p>
+                                </div>
+                                <div class="text-lg font-bold text-secondary">20万元</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 text-gold">
+                            <i class="fas fa-heart mr-2"></i>特别奖项
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="award-card p-4 flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">最佳青年创作奖</h4>
+                                    <p class="text-sm text-gray-400">面向35岁以下创作者，获得培训全额奖学金</p>
+                                </div>
+                                <div class="text-lg font-bold text-gold">20万元</div>
+                            </div>
+                            <div class="award-card p-4 flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">最佳学生作品奖</h4>
+                                    <p class="text-sm text-gray-400">在校学生创作优秀作品</p>
+                                </div>
+                                <div class="text-lg font-bold text-gold">15万元</div>
+                            </div>
+                            <div class="award-card p-4 flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold">海外华人创作奖</h4>
+                                    <p class="text-sm text-gray-400">促进海外华人文化认同和传承</p>
+                                </div>
+                                <div class="text-lg font-bold text-gold">10万元</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主题乐园 Section -->
+    <section id="park" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">朱仙镇AI年画主题乐园</h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        全球首个以AI技术为核心的传统文化主题乐园，在启封故园打造沉浸式年画文化体验空间，
+                        让游客在现代科技中感受千年文化的魅力，构建"虚拟创作→实体体验→情感共鸣→文化传承"的完整闭环
+                    </p>
+                </div>
+
+                <!-- 核心体验区域 -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🏯</span>
+                        <h3 class="feature-title">年画工坊体验区</h3>
+                        <p class="text-gray-300 mb-4">
+                            复原传统朱仙镇年画制作工坊，结合AR技术让游客体验完整的年画制作流程。
+                            从雕版、调色到印制，每个步骤都有AI导师指导，游客可制作属于自己的数字年画作品。
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-sm text-yellow-400">
+                                <strong>特色体验：</strong>AI年画大师虚拟指导 • 个性化定制年画 • 数字作品NFT收藏
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎭</span>
+                        <h3 class="feature-title">神话角色互动区</h3>
+                        <p class="text-gray-300 mb-4">
+                            通过全息投影技术复活门神、财神、戏曲人物等经典年画角色，
+                            游客可与这些AI驱动的数字角色进行实时对话，了解背后的文化故事和历史背景。
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-sm text-yellow-400">
+                                <strong>核心角色：</strong>门神秦琼·尉迟敬德 • 财神赵公明·比干 • 包公·花木兰
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎬</span>
+                        <h3 class="feature-title">AI影视制作体验馆</h3>
+                        <p class="text-gray-300 mb-4">
+                            配备最新的AI影视制作设备，游客可以使用专业的AI工具创作自己的年画动画短片。
+                            从剧本生成到角色设计，从动画制作到后期剪辑，全程AI辅助完成。
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-sm text-yellow-400">
+                                <strong>设备配置：</strong>AI剧本生成 • 角色动画制作 • 实时渲染系统 • 专业剪辑工具
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌸</span>
+                        <h3 class="feature-title">沉浸式文化剧场</h3>
+                        <p class="text-gray-300 mb-4">
+                            360度环幕剧场定期上演AI年画影视节获奖作品，结合4D感官效果，
+                            让观众完全沉浸在年画世界中，体验从静态艺术到动态故事的奇妙转变。
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-sm text-yellow-400">
+                                <strong>技术配置：</strong>8K环幕投影 • 22.2环绕音响 • 体感座椅 • 嗅觉香氛系统
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🏪</span>
+                        <h3 class="feature-title">文创市集</h3>
+                        <p class="text-gray-300 mb-4">
+                            汇聚全国优秀年画文创产品，从传统手工制品到AI定制商品，
+                            游客可以购买到独一无二的年画文化纪念品，将美好回忆带回家。
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-sm text-yellow-400">
+                                <strong>特色商品：</strong>个人定制年画 • AI生成文创 • 传统手工艺品 • 数字收藏品
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🍜</span>
+                        <h3 class="feature-title">年画主题餐厅</h3>
+                        <p class="text-gray-300 mb-4">
+                            以年画文化为主题的特色餐厅，提供开封传统美食和创新菜品。
+                            用餐环境融入年画元素，让游客在品尝美食的同时感受浓厚的文化氛围。
+                        </p>
+                        <div class="mt-4">
+                            <div class="text-sm text-yellow-400">
+                                <strong>特色体验：</strong>年画宴席 • 开封小笼包 • 传统茶艺 • 文化主题包厢
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 乐园价值与意义 -->
+                <div class="card p-8 mt-16">
+                    <h3 class="text-3xl font-bold text-center mb-8 gradient-text">主题乐园的文化价值与未来意义</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 text-gold">教育传承价值</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li>• 让青少年在娱乐中自然接受传统文化教育</li>
+                                <li>• 通过体验式学习加深对非遗文化的理解</li>
+                                <li>• 培养新一代文化传承人和爱好者</li>
+                                <li>• 提供专业的文化研究和交流平台</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 text-gold">创新示范意义</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li>• 探索AI技术与传统文化结合的新模式</li>
+                                <li>• 为其他地区文化旅游发展提供借鉴</li>
+                                <li>• 推动文化产业转型升级和创新发展</li>
+                                <li>• 构建可持续的文化传承商业模式</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <p class="text-lg text-gray-300">
+                            主题乐园不仅是娱乐场所，更是文化传承的载体、教育普及的平台、创新实践的基地。
+                            通过现代科技手段让传统文化重新焕发生机，实现文化价值与经济价值的统一，
+                            为构建文化强国贡献智慧和力量。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 未来发展规划 -->
+                <div class="mt-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 gradient-text">未来发展愿景</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-gold">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">国际文化交流中心</h4>
+                            <p class="text-sm text-gray-300">成为中华文化对外展示的重要窗口，每年接待海外游客超过100万人次</p>
+                        </div>
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-primary">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">文化教育基地</h4>
+                            <p class="text-sm text-gray-300">与全国中小学建立合作关系，开展年画文化教育，受益学生超过500万人</p>
+                        </div>
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl mb-4 text-secondary">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">科技创新高地</h4>
+                            <p class="text-sm text-gray-300">推动AI+文化产业技术研发，培育一批具有国际竞争力的文化科技企业</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 培训体系 Section -->
+    <section id="training" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">AI年画文化培训体系</h2>
+                    <p class="text-xl text-gray-300">
+                        构建完整的AI+文化教育体系，培养专业技术人才和文化传承人，
+                        为全国文化科技产业发展提供人才支撑
+                    </p>
+                </div>
+
+                <!-- 培训体系架构 -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="feature-card text-center">
+                        <span class="feature-icon">🎓</span>
+                        <h3 class="feature-title">专业学院教育</h3>
+                        <p class="text-gray-300 mb-4">
+                            与全国50所重点艺术院校建立合作关系，开设AI年画专业课程，
+                            培养具备传统文化素养和现代技术能力的复合型人才。
+                        </p>
+                        <div class="text-sm text-yellow-400">
+                            年培养专业人才1000名
+                        </div>
+                    </div>
+
+                    <div class="feature-card text-center">
+                        <span class="feature-icon">🏛️</span>
+                        <h3 class="feature-title">传承人培训</h3>
+                        <p class="text-gray-300 mb-4">
+                            与全国200位各级年画传承人建立直接联系，提供现代技术培训，
+                            让传统艺人掌握AI工具，实现传统技艺与现代科技的融合。
+                        </p>
+                        <div class="text-sm text-yellow-400">
+                            培养各级传承人1000名
+                        </div>
+                    </div>
+
+                    <div class="feature-card text-center">
+                        <span class="feature-icon">🌐</span>
+                        <h3 class="feature-title">国际交流培训</h3>
+                        <p class="text-gray-300 mb-4">
+                            建立国际化的文化教育交流平台，每年接待海外学员，
+                            促进中外文化教育合作，推动中华文化走向世界。
+                        </p>
+                        <div class="text-sm text-yellow-400">
+                            年接待海外学员1000名
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 课程体系 -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold text-center mb-8 gradient-text">核心课程体系</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-gold">文化基础课程</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• 朱仙镇年画历史</li>
+                                <li>• 传统制作工艺</li>
+                                <li>• 文化内涵解读</li>
+                                <li>• 民俗文化研究</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-primary">技术应用课程</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• AI图像生成技术</li>
+                                <li>• 动画制作工具</li>
+                                <li>• 交互设计方法</li>
+                                <li>• 数字化保护技术</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-secondary">创作实践课程</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• 剧本创作技巧</li>
+                                <li>• 角色设计方法</li>
+                                <li>• 影视制作流程</li>
+                                <li>• 作品展示技巧</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-accent">产业应用课程</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• IP运营管理</li>
+                                <li>• 市场推广策略</li>
+                                <li>• 商业模式创新</li>
+                                <li>• 国际合作交流</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术创新 Section -->
+    <section id="innovation" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">技术创新与突破</h2>
+                    <p class="text-xl text-gray-300">
+                        推动AI技术在文化传承领域的创新应用，开发专门针对年画艺术的技术解决方案，
+                        为全球文化遗产数字化保护提供中国方案
+                    </p>
+                </div>
+
+                <!-- 核心技术 -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🎨</span>
+                        <h3 class="feature-title">AI年画生成技术</h3>
+                        <p class="text-gray-300">
+                            开发专门针对朱仙镇年画特色的AI生成算法，能够在保持传统艺术风格的前提下，
+                            创造出符合现代审美的新内容。系统学习了超过1000幅传统年画样本，
+                            掌握了独特的色彩搭配、构图法则和文化符号运用规律。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎭</span>
+                        <h3 class="feature-title">静态到动态转换</h3>
+                        <p class="text-gray-300">
+                            突破性的静态图像动态化技术，让传统年画中的人物角色具备自然的动作表达能力。
+                            通过深度学习人体运动规律和表情变化，让门神、财神等角色能够进行流畅的动作表演，
+                            同时保持原有的艺术风格特征。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🗣️</span>
+                        <h3 class="feature-title">多模态文化解读</h3>
+                        <p class="text-gray-300">
+                            结合视觉、听觉、触觉的AI系统，为不同文化背景的观众提供深度的文化解读。
+                            系统能够识别年画中的各种元素，并用生动的语言讲解其文化含义、历史背景和象征意义，
+                            让外国观众也能深入理解中华文化精髓。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🔗</span>
+                        <h3 class="feature-title">区块链版权保护</h3>
+                        <p class="text-gray-300">
+                            采用区块链技术确保每件AI生成的年画作品都有唯一的数字身份证明，
+                            防止盗版和侵权。所有创作过程、作者信息、作品特征都被永久记录在链上，
+                            为文化创意产业的知识产权保护提供可靠的技术保障。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎯</span>
+                        <h3 class="feature-title">个性化内容推荐</h3>
+                        <p class="text-gray-300">
+                            基于用户兴趣和文化背景的智能推荐系统，能够为不同观众推荐最适合的年画作品和文化内容。
+                            系统分析用户的观看行为、互动偏好和文化认知水平，
+                            提供个性化的学习路径和体验方案。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌐</span>
+                        <h3 class="feature-title">跨语言文化传播</h3>
+                        <p class="text-gray-300">
+                            先进的多语言AI翻译系统，不仅能够准确翻译文本内容，
+                            更能理解文化内涵并进行恰当的跨文化表达。支持50多种语言的实时翻译，
+                            让年画文化能够真正走向全世界，被不同文化背景的人群所理解和欣赏。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 技术应用案例 -->
+                <div class="card p-8 mt-16">
+                    <h3 class="text-3xl font-bold text-center mb-8 gradient-text">技术应用成果展示</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 text-gold">数字化保护成果</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li>• 完整数字化300+种传统年画样式</li>
+                                <li>• 记录20套完整的传统制作工艺流程</li>
+                                <li>• 收集200小时传承人技艺视频资料</li>
+                                <li>• 建立全球最大的年画文化数据库</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 text-gold">创新应用突破</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li>• AI生成年画作品准确率达到95%以上</li>
+                                <li>• 静态转动态技术获得3项国际专利</li>
+                                <li>• 多语言文化解读支持50+种语言</li>
+                                <li>• 个性化推荐系统满意度超过90%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购票入园 Section -->
+    <section id="tickets" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">购票入园</h2>
+                    <p class="text-xl text-gray-300">
+                        体验千年文化与现代科技的完美融合，感受AI技术赋予传统年画的全新生命力
+                    </p>
+                </div>
+
+                <!-- 影视节门票 -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 text-gold">
+                        <i class="fas fa-film mr-3"></i>影视节活动门票
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- VIP票 -->
+                        <div class="card p-8 relative overflow-hidden border-2 border-gold">
+                            <div class="absolute top-0 right-0 bg-gold text-black px-4 py-2 rounded-bl-lg font-bold text-sm">
+                                推荐
+                            </div>
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4 text-gold"><i class="fas fa-crown"></i></div>
+                                <h3 class="text-2xl font-bold mb-2">VIP尊享票</h3>
+                                <div class="text-4xl font-bold text-gold mb-2">￥1,280</div>
+                                <p class="text-gray-400">影视节全程VIP体验</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>颁奖典礼VIP座席</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>获奖作品首映礼</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>与创作者见面交流</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>专属VIP休息区</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>精美礼品纪念套装</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>限量版NFT收藏</span>
+                                </div>
+                            </div>
+                            <button class="btn-gold w-full py-3 rounded-lg font-bold text-lg">
+                                立即购买
+                            </button>
+                            <p class="text-center text-sm text-gray-400 mt-3">限量500张</p>
+                        </div>
+
+                        <!-- 标准票 -->
+                        <div class="card p-8">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4 text-silver"><i class="fas fa-star"></i></div>
+                                <h3 class="text-2xl font-bold mb-2">标准观影票</h3>
+                                <div class="text-4xl font-bold text-silver mb-2">￥480</div>
+                                <p class="text-gray-400">影视节核心活动参与</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>颁奖典礼标准座席</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>获奖作品观影</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>展览区域参观</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>官方节目册</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>纪念品购买权</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-3 rounded-lg font-bold text-lg">
+                                立即购买
+                            </button>
+                            <p class="text-center text-sm text-gray-400 mt-3">2000张可售</p>
+                        </div>
+
+                        <!-- 学生票 -->
+                        <div class="card p-8">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4 text-bronze"><i class="fas fa-graduation-cap"></i></div>
+                                <h3 class="text-2xl font-bold mb-2">学生优惠票</h3>
+                                <div class="text-4xl font-bold text-bronze mb-2">￥180</div>
+                                <p class="text-gray-400">学生专属优惠价格</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>颁奖典礼观礼</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>精选作品观影</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>教育展区参观</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>学习资料包</span>
+                                </div>
+                                <div class="flex items-center text-gray-500">
+                                    <i class="fas fa-times mr-3"></i>
+                                    <span>VIP专属服务</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-3 rounded-lg font-bold text-lg">
+                                立即购买
+                            </button>
+                            <p class="text-center text-sm text-gray-400 mt-3">需验证学生身份</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 主题乐园门票 -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-12 text-gold">
+                        <i class="fas fa-magic mr-3"></i>主题乐园门票
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- 全天通票 -->
+                        <div class="card p-8 border-2 border-secondary">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4 text-secondary"><i class="fas fa-ticket-alt"></i></div>
+                                <h3 class="text-2xl font-bold mb-2">全天通票</h3>
+                                <div class="text-4xl font-bold text-secondary mb-2">￥268</div>
+                                <p class="text-gray-400">畅玩所有体验项目</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>所有体验区域无限次</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>AI工坊制作体验</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>角色互动对话</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>沉浸式剧场演出</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>个人作品制作</span>
+                                </div>
+                            </div>
+                            <button class="btn-gold w-full py-3 rounded-lg font-bold text-lg">
+                                立即购买
+                            </button>
+                        </div>
+
+                        <!-- 二日票 -->
+                        <div class="card p-8">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4 text-primary"><i class="fas fa-calendar-alt"></i></div>
+                                <h3 class="text-2xl font-bold mb-2">二日通票</h3>
+                                <div class="text-4xl font-bold text-primary mb-2">￥428</div>
+                                <p class="text-gray-400">深度体验文化之旅</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>连续两日无限畅玩</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>专属文化导览服务</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>高级AI创作工具</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>作品NFT认证</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>餐饮优惠券</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-3 rounded-lg font-bold text-lg">
+                                立即购买
+                            </button>
+                        </div>
+
+                        <!-- 年卡 -->
+                        <div class="card p-8">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-4 text-accent"><i class="fas fa-infinity"></i></div>
+                                <h3 class="text-2xl font-bold mb-2">年度会员卡</h3>
+                                <div class="text-4xl font-bold text-accent mb-2">￥1,580</div>
+                                <p class="text-gray-400">全年无限次入园</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>全年365天无限入园</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>免费参加所有特别活动</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>VIP专属服务通道</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>餐饮购物8折优惠</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span>生日专属礼品</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-3 rounded-lg font-bold text-lg">
+                                立即购买
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 购票须知 -->
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold text-center mb-8 gradient-text">购票须知</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 text-gold">开放时间</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• 影视节活动：2026年10月16日-20日</li>
+                                <li>• 主题乐园：每日9:00-18:00</li>
+                                <li>• 夜场活动：周五周六延长至21:00</li>
+                                <li>• 节假日可能调整，以官网公告为准</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 text-gold">购票政策</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• 1.2米以下儿童免票（需成人陪同）</li>
+                                <li>• 1.2-1.5米儿童享受儿童票价</li>
+                                <li>• 60岁以上老人凭证件享受半价</li>
+                                <li>• 残疾人凭证件享受免费入园</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <p class="text-lg text-gray-300 mb-4">
+                            地址：河南省开封市龙亭区启封故园文化产业园区
+                        </p>
+                        <p class="text-sm text-gray-400">
+                            购票咨询客服：400-888-2026 | 营业时间：9:00-18:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-70 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="logo-font text-2xl mb-4">ZHUXIAN AI FESTIVAL</div>
+                    <p class="text-gray-400 mb-4">
+                        全球首个以千年非遗为核心的AI影视节，让传统文化拥抱未来，
+                        构建文化保护与创新发展的完美融合
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#heritage" class="text-gray-400 hover:text-yellow-400 transition">文化传承</a></li>
+                        <li><a href="#festival" class="text-gray-400 hover:text-yellow-400 transition">影视节</a></li>
+                        <li><a href="#awards" class="text-gray-400 hover:text-yellow-400 transition">奖项设置</a></li>
+                        <li><a href="#park" class="text-gray-400 hover:text-yellow-400 transition">主题乐园</a></li>
+                        <li><a href="#training" class="text-gray-400 hover:text-yellow-400 transition">培训体系</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">服务支持</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#tickets" class="text-gray-400 hover:text-yellow-400 transition">购票入园</a></li>
+                        <li><a href="#innovation" class="text-gray-400 hover:text-yellow-400 transition">技术创新</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition">用户协议
