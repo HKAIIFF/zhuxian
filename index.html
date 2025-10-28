@@ -261,6 +261,17 @@
             transform: translateX(0);
         }
         
+        /* 為了更好的響應式菜單，我們將調整桌面菜單的佈局 */
+        .desktop-nav-links {
+            /* 使用 flex-grow 和 min-width:0 來確保內容可以收縮 */
+            flex-grow: 1;
+            min-width: 0;
+            /* 讓菜單項之間的間距靈活調整 */
+            justify-content: space-between; 
+            /* 確保在較寬的屏幕上菜單項不會擠壓 */
+            /* 移除 space-x-6，改用 justify-between */
+        }
+        
         .ticket-card {
             background: linear-gradient(135deg, rgba(192, 57, 43, 0.3), rgba(211, 84, 0, 0.3));
             border-radius: 12px;
@@ -310,19 +321,20 @@
             </a>
             
             <!-- 桌面导航 -->
-            <div class="hidden md:flex space-x-6">
-                <a href="#intro" class="hover:text-blue-400 transition">项目介绍</a>
-                <a href="#film-festival" class="hover:text-blue-400 transition">AI年画电影节</a>
-                <a href="#carnival" class="hover:text-blue-400 transition">AI年画嘉年华</a>
-                <a href="#talent" class="hover:text-blue-400 transition">金版人才计划</a>
-                <a href="#market" class="hover:text-blue-400 transition">年画市场</a>
-                <a href="#tickets" class="hover:text-blue-400 transition">购票通道</a>
-                <a href="#contact" class="hover:text-blue-400 transition">联系我们</a>
+<div class="hidden md:flex items-center desktop-nav-links" style="flex-grow: 1; min-width: 0; justify-content: space-between;">
+                <!-- 使用 flex-grow 和 text-sm/text-xs 確保在小寬度下也能在一行顯示 -->
+                <a href="#intro" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">項目介紹</a>
+                <a href="#film-festival" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">AI年畫電影節</a>
+                <a href="#carnival" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">AI年畫嘉年華</a>
+                <a href="#talent" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">金版人才計劃</a>
+                <a href="#market" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">年畫市場</a>
+                <a href="#tickets" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">購票通道</a>
+                <a href="#contact" class="hover:text-blue-400 transition text-sm flex-shrink-0 px-2">聯繫我們</a>
             </div>
             
             <div class="flex items-center space-x-4">
-                <a href="#tickets" class="btn-gold px-6 py-2 rounded-full text-sm font-bold">立即购票</a>
-                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm">合作咨询</a>
+                <a href="#tickets" class="btn-gold px-6 py-2 rounded-full text-sm font-bold hidden sm:block">立即购票</a>
+                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm hidden sm:block">合作咨询</a>
                 
                 <!-- 移动设备菜单按钮 -->
                 <button class="mobile-menu-button md:hidden" id="menuToggle">
@@ -332,18 +344,21 @@
         </div>
         
         <!-- 移动设备菜单 -->
-        <div class="mobile-menu md:hidden" id="mobileMenu">
-            <div class="mobile-menu-close absolute top-4 right-4 cursor-pointer" id="menuClose">
-                <i class="fas fa-times text-xl"></i>
+<!-- 移動設備菜單：使用 Tailwind 類來控制顯示/隱藏 -->
+        <div class="mobile-menu md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out" id="mobileMenu">
+            <div class="flex justify-end p-4">
+                <button id="menuClose" class="text-white text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div class="mt-12 flex flex-col space-y-6">
-                <a href="#intro" class="text-xl hover:text-blue-400 transition">项目介绍</a>
-                <a href="#film-festival" class="text-xl hover:text-blue-400 transition">AI年画电影节</a>
-                <a href="#carnival" class="text-xl hover:text-blue-400 transition">AI年画嘉年华</a>
-                <a href="#talent" class="text-xl hover:text-blue-400 transition">金版人才计划</a>
-                <a href="#market" class="text-xl hover:text-blue-400 transition">年画市场</a>
-                <a href="#tickets" class="text-xl hover:text-blue-400 transition">购票通道</a>
-                <a href="#contact" class="text-xl hover:text-blue-400 transition">联系我们</a>
+            <div class="mt-4 flex flex-col space-y-4 p-4">
+                <a href="#intro" class="text-xl hover:text-blue-400 transition mobile-menu-link">項目介紹</a>
+                <a href="#film-festival" class="text-xl hover:text-blue-400 transition mobile-menu-link">AI年畫電影節</a>
+                <a href="#carnival" class="text-xl hover:text-blue-400 transition mobile-menu-link">AI年畫嘉年華</a>
+                <a href="#talent" class="text-xl hover:text-blue-400 transition mobile-menu-link">金版人才計劃</a>
+                <a href="#market" class="text-xl hover:text-blue-400 transition mobile-menu-link">年畫市場</a>
+                <a href="#tickets" class="text-xl hover:text-blue-400 transition mobile-menu-link">購票通道</a>
+                <a href="#contact" class="text-xl hover:text-blue-400 transition mobile-menu-link">聯繫我們</a>
             </div>
         </div>
     </nav>
@@ -1594,13 +1609,42 @@
         const menuToggle = document.getElementById('menuToggle');
         const menuClose = document.getElementById('menuClose');
         const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-        });
+        function toggleMenu() {
+            // 使用 transform 類來控制滑入/滑出效果
+            mobileMenu.classList.toggle('translate-x-full');
+            mobileMenu.classList.toggle('translate-x-0');
+        }
 
-        menuClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+
+        // 2. 移動端菜單項點擊後關閉菜單並平滑滾動
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // 關閉菜單
+                toggleMenu(); 
+
+                // 獲取目標 ID
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    e.preventDefault(); // 阻止默認的跳轉行為
+                    
+                    // 平滑滾動到目標元素
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // 考慮到固定導航欄的高度，進行偏移
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });
 
         // 点击菜单项目后关闭菜单
@@ -1842,14 +1886,53 @@
             console.log('网络连接已断开');
         });
 
-        // 深度链接支持
+        // 3. 原始的平滑滾動和深度鏈接支持
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (anchor.classList.contains('mobile-menu-link')) return; // 避免重複綁定
+
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // 4. 網絡狀態監聽 (保留原代碼中的功能)
+        window.addEventListener('online', () => {
+            console.log('網絡連接已恢復');
+        });
+
+        window.addEventListener('offline', () => {
+            console.log('網絡連接已斷開');
+        });
+
+        // 5. 深度鏈接支持 (保留原代碼中的功能)
         function handleHashChange() {
             const hash = window.location.hash;
             if (hash) {
                 const target = document.querySelector(hash);
                 if (target) {
                     setTimeout(() => {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // 考慮到固定導航欄的高度，進行偏移
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.offsetTop - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
                     }, 100);
                 }
             }
